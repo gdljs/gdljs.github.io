@@ -1,12 +1,13 @@
 const App = async () => {
   const branch = "feature.add-more-context";
-  const repoUrlTemplate = `https://raw.githubusercontent.com/gdljs/gdljs.github.io/${branch}/`;
+  const repoUrlTemplate = `//raw.githubusercontent.com/gdljs/gdljs.github.io/${branch}/`;
 
+  const contentEl = document.querySelector(".main-layout-content");
   const contentDoc = "content.html";
-  const request = await fetch(repoUrlTemplate + contentDoc, { method: "get" });
-  const requestReader = await request.body.getReader();
-  const content = await requestReader.read();
-  console.log(">>>>>>>", content.value.toString());
+  // const request = await fetch(repoUrlTemplate + contentDoc, { method: "get" });
+  const request = await fetch("./" + contentDoc, { method: "get" });
+  const content = await request.text();
+  contentEl.innerHTML = content;
 
   const picsUrl = `https://api.github.com/repos/gdljs/gdljs.github.io/git/trees/${branch}?recursive=1`;
   let pics;
