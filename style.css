@@ -5,8 +5,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #F0DB4F;
-  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #f0db4f;
+  font-family: "Roboto Condensed", sans-serif;
   overflow: hidden;
 }
 
@@ -27,9 +27,11 @@ body .main-layout .main-layout-navbar {
   align-items: center;
   justify-content: flex-end;
   height: 80px;
+  padding: 0 24px;
   top: 0;
-  right: 24px;
-  left: 24px;
+  right: 0;
+  left: 0;
+  background-color: red;
 }
 
 body .main-layout .main-layout-navbar a {
@@ -63,9 +65,11 @@ body .main-layout .footer {
   align-items: center;
   justify-content: flex-end;
   height: 80px;
+  padding: 0 24px;
   bottom: 0;
-  right: 24px;
-  left: 24px;
+  right: 0;
+  left: 0;
+  background-color: yellow;
 }
 
 body .main-layout .footer .social-media {
@@ -102,8 +106,9 @@ body .main-layout .footer .social-media:hover {
   }
 
   body .main-layout .main-layout-navbar {
+    padding-top: 20px;
     flex-direction: column;
-    top: 24px;
+    top: 0px;
     right: 0;
     height: auto;
   }
