@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffd740;
+  background-color: #F0DB4F;
   font-family: 'Roboto Condensed', sans-serif;
   overflow: hidden;
 }
@@ -29,13 +29,13 @@ body .main-layout .main-layout-navbar {
   height: 80px;
   top: 0;
   right: 24px;
-  left: 0;
+  left: 24px;
 }
 
 body .main-layout .main-layout-navbar a {
   font-size: 1.5rem;
   margin-right: 24px;
-  color: black;
+  color: #323330;
   text-decoration: none;
 }
 
@@ -57,6 +57,29 @@ body .main-layout .main-layout-content img {
   height: auto;
 }
 
+body .main-layout .footer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 80px;
+  bottom: 0;
+  right: 24px;
+  left: 24px;
+}
+
+body .main-layout .footer .social-media {
+  color: #323330;
+  font-size: 36px;
+  margin: 12px;
+  transition: font-size 0.3s;
+}
+
+body .main-layout .footer .social-media:hover {
+  font-size: 50px;
+  transition: font-size 0.3s;
+}
+
 @media screen and (max-width: 1024px) {
   body .main-layout .main-layout-content {
     width: 700px;
@@ -66,6 +89,10 @@ body .main-layout .main-layout-content img {
 @media screen and (max-width: 768px) {
   body .main-layout .main-layout-content {
     width: 600px;
+  }
+
+  body .main-layout .footer {
+    justify-content: center;
   }
 }
 
@@ -84,5 +111,9 @@ body .main-layout .main-layout-content img {
   body .main-layout .main-layout-navbar a {
     margin-right: 0;
     margin-bottom: 12px;
+  }
+
+  body .main-layout .footer .social-media {
+    font-size: 30px;
   }
 }
