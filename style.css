@@ -150,5 +150,16 @@ body .main-layout .footer .social-media:hover {
   background-repeat: no-repeat;
   z-index: 0;
   top: 10%;
-  left: 50%;
+  left: 0%;
+  transition: background-image 0.2s ease-in-out;
+  animation: slide 20s infinite linear;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    left: 60%;
+  }
+  100% {
+    left: 0%;
+  }
 }

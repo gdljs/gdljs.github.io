@@ -4,7 +4,8 @@ const App = async () => {
 
   const contentEl = document.querySelector(".main-layout-content");
   const contentDoc = "content.html";
-  const request = await fetch(repoUrlTemplate + contentDoc, { method: "get" });
+  // const request = await fetch(repoUrlTemplate + contentDoc, { method: "get" });
+  const request = await fetch("./" + contentDoc, { method: "get" });
   const content = await request.text();
   contentEl.innerHTML = content;
 
@@ -22,10 +23,13 @@ const App = async () => {
   } else {
     alert("HTTP-Error: " + response.status);
   }
-
-  slideshowEl.style.backgroundImage = `url(${
-    pics[Math.floor(Math.random() * pics.length)]
-  })`;
+  const setRandomBackgroundImage = () => {
+    slideshowEl.style.backgroundImage = `url(${
+      pics[Math.floor(Math.random() * pics.length)]
+    })`;
+  };
+  slideshowEl.addEventListener("animationiteration", setRandomBackgroundImage);
+  setRandomBackgroundImage();
 };
 
 window.addEventListener("DOMContentLoaded", (event) => {
