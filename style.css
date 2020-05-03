@@ -15,13 +15,20 @@ body {
 
 body .main-layout {
   margin: auto;
-  max-width: 1440px;
+  width: 100%;
+  /* max-width: 1440px; */
   min-height: 100vh;
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 170px 24px 100px 24px;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(240, 219, 64, 1) 60%,
+    rgba(240, 219, 79, 0) 100%
+  );
 }
 
 body .main-layout .main-layout-navbar {
@@ -128,4 +135,20 @@ body .main-layout .footer .social-media:hover {
   body .main-layout .footer .social-media {
     font-size: 30px;
   }
+
+  .slideshow {
+    display: none;
+  }
+}
+
+.slideshow {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  top: 10%;
+  left: 50%;
 }

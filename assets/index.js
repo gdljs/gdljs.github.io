@@ -4,11 +4,11 @@ const App = async () => {
 
   const contentEl = document.querySelector(".main-layout-content");
   const contentDoc = "content.html";
-  // const request = await fetch(repoUrlTemplate + contentDoc, { method: "get" });
-  const request = await fetch("./" + contentDoc, { method: "get" });
+  const request = await fetch(repoUrlTemplate + contentDoc, { method: "get" });
   const content = await request.text();
   contentEl.innerHTML = content;
 
+  const slideshowEl = document.querySelector(".slideshow");
   const picsUrl = `https://api.github.com/repos/gdljs/gdljs.github.io/git/trees/${branch}?recursive=1`;
   let pics;
   const response = await fetch(picsUrl);
@@ -23,7 +23,9 @@ const App = async () => {
     alert("HTTP-Error: " + response.status);
   }
 
-  // console.log(pics);
+  slideshowEl.style.backgroundImage = `url(${
+    pics[Math.floor(Math.random() * pics.length)]
+  })`;
 };
 
 window.addEventListener("DOMContentLoaded", (event) => {
