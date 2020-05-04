@@ -1,24 +1,31 @@
 * {
   box-sizing: border-box;
+  --main-color: #f0db4f;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #F0DB4F;
-  font-family: 'Roboto Condensed', sans-serif;
+  background-color: var(--main-color);
+  font-family: "Roboto Condensed", sans-serif;
   overflow: hidden;
 }
 
 body .main-layout {
   margin: auto;
-  max-width: 1440px;
+  width: 100%;
   min-height: 100vh;
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 0 24px 100px 24px;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(240, 219, 64, 1) 60%,
+    rgba(240, 219, 79, 0) 100%
+  );
 }
 
 body .main-layout .main-layout-navbar {
@@ -27,9 +34,11 @@ body .main-layout .main-layout-navbar {
   align-items: center;
   justify-content: flex-end;
   height: 80px;
+  padding: 0 24px;
   top: 0;
-  right: 24px;
-  left: 24px;
+  right: 0;
+  left: 0;
+  background-color: var(--main-color);
 }
 
 body .main-layout .main-layout-navbar a {
@@ -63,9 +72,11 @@ body .main-layout .footer {
   align-items: center;
   justify-content: flex-end;
   height: 80px;
+  padding: 0 24px;
   bottom: 0;
-  right: 24px;
-  left: 24px;
+  right: 0;
+  left: 0;
+  background-color: var(--main-color);
 }
 
 body .main-layout .footer .social-media {
@@ -97,13 +108,21 @@ body .main-layout .footer .social-media:hover {
 }
 
 @media screen and (max-width: 576px) {
+  body .main-layout {
+    padding: 170px 24px 100px 24px;
+  }
+  body {
+    overflow: auto;
+  }
+
   body .main-layout .main-layout-content {
     width: 300px;
   }
 
   body .main-layout .main-layout-navbar {
+    padding-top: 20px;
     flex-direction: column;
-    top: 24px;
+    top: 0px;
     right: 0;
     height: auto;
   }

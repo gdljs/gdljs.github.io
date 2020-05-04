@@ -1,0 +1,13 @@
+.content {
+  width: 60%;
+}
+
+.content .who {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .content {
+    width: 100%;
+  }
+}
